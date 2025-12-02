@@ -1,0 +1,79 @@
+// _landing.scss
+
+// Hero Section dengan Gradient Modern
+.hero-section {
+    background: linear-gradient(135deg, #435ebe 0%, #25396f 100%);
+    color: white;
+    padding: 8rem 0 6rem 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -20%;
+        width: 800px;
+        height: 800px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+    }
+}
+
+// Card Event yang Modern
+.event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .date-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        .day {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #435ebe;
+            line-height: 1;
+        }
+
+        .month {
+            font-size: 0.8rem;
+            color: #6c757d;
+            text-transform: uppercase;
+        }
+    }
+}
+
+// Kategori Pills
+.category-pill {
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover,
+    &.active {
+        background-color: #435ebe;
+        color: white;
+        border-color: #435ebe;
+    }
+}
