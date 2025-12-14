@@ -51,7 +51,7 @@
 ---
 
 ## 2. Teknologi & Arsitektur
-- **Backend:** Laravel 11
+- **Backend:** Laravel 12
 - **Frontend:** Livewire 3 (berperan sebagai *full-stack framework*) & Alpine.js
 - **UI Admin:** Template Mazer (berbasis Bootstrap 5)
 - **UI Publik:** Desain kustom menggunakan Tailwind CSS
