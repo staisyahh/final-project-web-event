@@ -1,0 +1,50 @@
+// 1. Import Mazer Variables
+@import "variables";
+
+// 2. Bootstrap Framework
+@import "bootstrap/scss/bootstrap";
+
+// [PERBAIKAN] Definisikan Path Font Icon secara eksplisit agar Vite bisa menemukannya
+$bootstrap-icons-font-src: url("bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
+    url("bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff") !default;
+
+// Baru import SCSS-nya setelah variabel di atas didefinisikan
+@import "bootstrap-icons/font/bootstrap-icons.scss";
+
+// Fix Icon Placement (Bawaan Mazer)
+body .bi::before,
+[class^=bi-]::before,
+[class*=" bi-"]::before {
+    vertical-align: sub;
+}
+
+// 3. Import Fonts (via NPM)
+@import "@fontsource/nunito/index.css";
+@import "iconly";
+
+// 4. Extensions Styles
+// Perfect Scrollbar
+@import "perfect-scrollbar/css/perfect-scrollbar.css";
+
+// SweetAlert2 (Base & Dark Theme)
+@import "sweetalert2/dist/sweetalert2.css";
+// @import "@sweetalert2/theme-dark/dark.scss";
+
+// FilePond
+@import "filepond/dist/filepond.min.css";
+@import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css";
+
+// Select2 & Theme
+@import "select2/src/scss/core.scss";
+@import "select2-bootstrap-5-theme/src/select2-bootstrap-5-theme.scss";
+
+// 5. Mazer Core Styles
+@import "mazer";
+
+// 6. Custom Landing Page Style
+@import "landing";
+
+// 7. Custom Style
+@import "custom";
+
+@import "pages/auth.scss"

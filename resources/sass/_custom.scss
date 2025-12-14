@@ -1,0 +1,129 @@
+/*
+|--------------------------------------------------------------------------
+| Custom SCSS
+| Tempatkan semua style kustom Anda di sini.
+|--------------------------------------------------------------------------
+*/
+
+// Transisi untuk sidebar, sidebar-wrapper dan main content
+#sidebar,
+#main,
+.sidebar-wrapper {
+    transition: all 0.3s ease-in-out;
+}
+
+// Style untuk sidebar yang di-minimize
+#app.sidebar-minimized {
+    #sidebar.active {
+        width: 80px;
+
+        .sidebar-wrapper {
+            width: 80px;
+        }
+
+        .sidebar-menu .menu .sidebar-item .sidebar-link span,
+        .sidebar-menu .menu .sidebar-title {
+            display: none; // Sembunyikan teks menu dan judul
+        }
+
+        .sidebar-menu .menu .sidebar-item .sidebar-link {
+            justify-content: center; // Ikon menjadi di tengah
+        }
+
+        .sidebar-header {
+            padding: 2rem 1.5rem; // Pertahankan padding
+            // Logonya tetap display:block secara default
+            .sidebar-toggler.d-xl-block { // Target spesifik toggle desktop
+                display: none; // Sembunyikan toggle desktop saat minimized
+            }
+        }
+
+
+        // Tampilkan kembali saat di-hover
+        &:hover {
+            width: 270px; // Lebar default mazer
+            .sidebar-wrapper {
+                width: 270px; // Lebar default mazer
+            }
+
+
+            .sidebar-menu .menu .sidebar-item .sidebar-link span,
+            .sidebar-menu .menu .sidebar-title {
+                display: block; // Tampilkan kembali
+            }
+
+            .sidebar-menu .menu .sidebar-item .sidebar-link {
+                justify-content: flex-start; // Kembali normal
+            }
+
+            .sidebar-header {
+                padding: 2rem; // Padding normal
+                justify-content: space-between; // Kembali normal
+
+                .sidebar-toggler.d-xl-block {
+                    display: block; // Tampilkan toggle desktop saat hover
+                }
+            }
+        }
+    }
+
+        #main {
+
+            margin-left: 80px;
+
+        }
+
+    }
+
+
+
+
+
+    /*
+
+    |--------------------------------------------------------------------------
+
+    | Custom Modal Style
+
+    |--------------------------------------------------------------------------
+
+    */
+
+    .modal-backdrop.show {
+
+        // Efek blur pada backdrop
+
+        backdrop-filter: blur(3px);
+
+        // Pastikan opacity sesuai, nilai default BS5 sudah cukup
+
+    }
+
+
+
+    .modal.fade {
+
+        .modal-dialog {
+
+            // Atur posisi awal dialog di atas (-50px) dan siapkan transisi
+
+            transform: translateY(-50px);
+
+            transition: transform 0.3s ease-out;
+
+        }
+
+
+
+        // Saat modal muncul (ditambahkan kelas .show)
+
+        &.show .modal-dialog {
+
+            // Kembalikan dialog ke posisi normal (0) untuk efek slide-down
+
+            transform: translateY(0);
+
+        }
+
+    }
+
